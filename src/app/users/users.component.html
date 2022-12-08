@@ -1,0 +1,138 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="container-5">
+        <div class="container-1">
+          <div class="container-2">
+            <p class="font-weight-bold mt-4">Settings</p>
+            <p class="font-weight-light">Settings > Users</p>
+          </div>
+          <div class="container-3">
+            <button
+              class="btn dropdown-toggle"
+              type="button"
+              id="dropdownMenu2"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img class="img-fluid" src="../../assets/admin.png" alt="admin" />
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="bi bi-person"></i> Profile</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="bi bi-chat-dots"></i> Feedback</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="bi bi-question-circle"></i> Help</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="bi bi-box-arrow-right"></i> Logout</a
+                >
+              </li>
+            </ul>
+            <p class="font-weight-light mt-3">Alex Kumar</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="row mt-4">
+              <div class="mb-3 col-md-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputText"
+                  placeholder="Search"
+                />
+              </div>
+              <div class="mb-3 col-md-6"></div>
+              <button type="button" class="btn btn-primary btn-lg col-md-3">
+                Add New User
+              </button>
+            </div>
+            <div class="container-6">
+              <table
+                mat-table
+                matSort
+                [dataSource]="dataSource"
+                class="mat-elevation-z8 mt-4"
+              >
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.id }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    NAME
+                  </th>
+                  <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="role">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    ROLE
+                  </th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.role }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="branch">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    BRANCH
+                  </th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.branch }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    STATUS
+                  </th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.status }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="createdat">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    CREATED AT
+                  </th>
+                  <td mat-cell *matCellDef="let element">
+                    <div>
+                      <button mat-raised-button color="primary" class="primary">
+                        UPDATE
+                      </button>
+                      <button mat-raised-button color="warn" class="warn">
+                        PASSWORD
+                      </button>
+                    </div>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr
+                  mat-row
+                  *matRowDef="let row; columns: displayedColumns"
+                ></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+.mat-toolbar {
+  position: sticky;
+  top: 0%;
+  z-index: 100;
+  background: #fcfcfc;
+}
+.justify-content-between{
+  display: flex;
+  justify-content: flex-start;
+}
+button {
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.material-icons {
+  font-size: 30px;
+  color: #000000;
+  opacity: 0.8;
+}

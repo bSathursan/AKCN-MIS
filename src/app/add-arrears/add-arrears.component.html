@@ -1,0 +1,97 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="container-5">
+        <div class="container-1">
+          <div class="container-2">
+            <p class="font-weight-bold mt-4">Payments</p>
+            <p class="font-weight-light">Payments > Add Arrears</p>
+          </div>
+          <div class="container-3">
+            <button
+              class="btn dropdown-toggle"
+              type="button"
+              id="dropdownMenu2"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img class="img-fluid" src="../../assets/admin.png" alt="admin" />
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="bi bi-person"></i> Profile</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="bi bi-chat-dots"></i> Feedback</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="bi bi-question-circle"></i> Help</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="bi bi-box-arrow-right"></i> Logout</a
+                >
+              </li>
+            </ul>
+            <p class="font-weight-light mt-3">Alex Kumar</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="container-4">
+            <div class="card-body">
+              <div class="card-tilte">
+                Enter the Connection ID & arrears amount to update the due
+              </div>
+              <div class="row mt-4 mb-4">
+                <div class="mb-3 col-lg-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputText"
+                    placeholder="Connection Id"
+                  />
+                </div>
+                <div class="mb-3 col-lg-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputText"
+                    placeholder="Amount"
+                  />
+                </div>
+                <div class="mb-3 col-lg-3">
+                  <input
+                    type="date"
+                    class="form-control"
+                    #evtDate
+                    required
+                    name="evtDate"
+                    placeholder="Arrears Date"
+                    id="evtDate"
+                    formControlName="eventDate"
+                    style="
+                      font: normal normal normal 13px/21px Poppins;
+                      letter-spacing: 0px;
+                      color: #707070;
+                      opacity: 1;
+                    "
+                  />
+                </div>
+                <button type="button" class="btn btn-primary btn-lg col-lg-3">
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

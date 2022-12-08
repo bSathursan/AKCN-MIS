@@ -1,0 +1,168 @@
+.vh-100 {
+    background: #fcfcfc 0% 0% no-repeat padding-box;
+    opacity: 1;
+    padding: 0px 20px 0px 0px;
+  }
+  .container-5 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+  .container-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 6rem;
+  }
+  .container-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .font-weight-bold {
+    text-align: left;
+    font-size: 41px;
+    font-weight: normal normal medium;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0px;
+    color: #11193c;
+    opacity: 1;
+  }
+  .font-weight-light {
+    text-align: left;
+    font: normal normal normal 15px/25px Poppins;
+    letter-spacing: 0px;
+    color: #8990ad;
+    opacity: 1;
+  }
+  .container-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    column-gap: 2%;
+  }
+  .dropdown-toggle-split {
+    height: 20%;
+    background-color: #fcfcfc;
+    border: 0px solid #fcfcfc;
+  }
+  .dropdown-toggle-split::after {
+    display: none;
+  }
+  .dropdown-menu {
+    background: #fff 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    border: 0px solid #fff;
+  }
+  .dropdown-item {
+    font: normal normal normal 13px/22px Poppins;
+    letter-spacing: 0px;
+    color: #8990ad;
+    opacity: 1;
+  }
+  .dropdown-item:hover{
+    background: #fff;
+  }
+  .bi {
+    padding: 0px 20px 0px 0px;
+  }
+  .img-fluid {
+    width: fit-content;
+    height: 100%;
+  }
+  .container-4 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0px 20px 0px 0px;
+  }
+  .card {
+    border: 0px solid #fff;
+    border-radius: 10px;
+    opacity: 1;
+  }
+  .card-tilte {
+    text-align: left;
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+  .form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .form-control {
+    padding: 5px 0px 5px 20px;
+    height: 150%;
+    background: #f8f8f8 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    border: 0px solid #f8f8f8;
+  }
+  ::placeholder {
+    text-align: left;
+    font: normal normal normal 13px/21px Poppins;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+  }
+  .btn-secondary{
+    height: 150%;
+    width: 100%;
+    background: #f8f8f8 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    border: 0px solid #f8f8f8;
+  }
+  .dropdown-toggle::after {
+    border-top: 5px solid #000000;
+    margin-left: 100%;
+  }
+  .dropdown-menu-end{
+    width: 90%;
+    background: #f8f8f8 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    border: 0px solid #f8f8f8;
+  }
+  .dropdown-item{
+    text-align: left;
+    font: normal normal normal 13px/21px Poppins;
+    letter-spacing: 0px;
+    color: #707070;
+    opacity: 1;
+  }
+  .dropdown-item:hover{
+    background: none;
+  }
+  .btn-primary {
+    background: #027afe 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 33px #00000014;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    border: 0px solid #027afe;
+  }
+  input[type="date"]::before {
+    content: attr(placeholder);
+    width: 100%;
+  }
+  input[type="date"]:focus::before,
+  input[type="date"]:valid::before {
+    display: none;
+  }
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    display: block;
+    padding: 0px 20px 0px 0px;
+    background: url(../../assets/calendar3.svg) no-repeat;
+    width: 16px;
+    height: 16px;
+  }
+  
