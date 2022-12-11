@@ -10,10 +10,6 @@
     row-gap: 20px;
   }
   .container-1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
     height: 6rem;
   }
   .container-2 {
@@ -36,6 +32,14 @@
     letter-spacing: 0px;
     color: #8990ad;
     opacity: 1;
+  }
+  .font-weight-normal{
+    text-align: center;
+    font: normal normal normal 15px/25px Poppins;
+    letter-spacing: 0px;
+    color: #8990ad;
+    opacity: 1;
+    padding: 15px 0px 0px 0px;
   }
   .container-3 {
     display: flex;
@@ -71,7 +75,7 @@
   }
   .img-fluid {
     width: fit-content;
-    height: 100%;
+    height: 130%;
   }
   .container-4 {
     display: flex;
@@ -120,7 +124,7 @@
   }
   .dropdown-toggle::after {
     border-top: 5px solid #000000;
-    margin-left: 100%;
+    margin-left: 105%;
   }
   .dropdown-menu-end{
     width: 90%;
@@ -147,6 +151,7 @@
     letter-spacing: 0px;
     color: #ffffff;
     border: 0px solid #027afe;
+    height: 3rem;
   }
   input[type="date"]::before {
     content: attr(placeholder);
@@ -164,5 +169,103 @@
     background: url(../../assets/calendar3.svg) no-repeat;
     width: 16px;
     height: 16px;
+  }
+  @media(max-width:960px){
+    .btn-primary{
+      width: 45%;
+      margin-left: 3%;
+    }
+  }
+  @media(min-width:800px){
+    .font-weight-normal{
+      padding: 20px 0px 0px 0px;
+    }
+  }
+  @media(max-width:768px){
+    .btn-primary{
+      margin-left: 25%;
+      margin-top: 5%;
+      width: 50%;
+    }
+  }
+  @media(max-width:650px){
+    .img-fluid{
+      width: fit-content;
+      height: 200%;
+    }
+    .font-weight-normal{
+      padding: 30px 0px 0px 0px;
+    }
+  }
+  @media(max-width:650px){
+    .img-fluid{
+      width: fit-content;
+      height: 200%;
+    }
+    .font-weight-normal{
+      padding: 30px 0px 0px 0px;
+    }
+  }
+  @media(max-width:631px){
+    .img-fluid{
+      width: fit-content;
+      height: 150%;
+    }
+    .font-weight-normal{
+      padding: 25px 0px 0px 0px;
+    }
+  }
+  @media (max-width:575px){
+    .container-3{
+      margin-top: -16%;
+    }
+    .btn-primary{
+      width: 60%;
+      margin-left: 20%;
+      margin-top: 5%;
+    }
+  }
+  @media (max-width:575px){
+    .container-3{
+      margin-top: -18%;
+    }
+  }
+  @media (max-width:450px){
+    .container-3{
+      margin-top: -20%;
+    }
+  }
+  @media (max-width:410px){
+    .container-3{
+      margin-top: -23%;
+    }
+  }
+  @media (max-width:480px){
+    .container-3{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-top: 0%;
+      margin-left: -5%;
+    }
+    .card{
+      margin-top: 20%;
+    }
+  }
+  @media (max-width:380px){
+    .img-fluid{
+      width: fit-content;
+      height: 100%;
+    }
+    .font-weight-normal{
+      padding: 15px 0px 0px 0px;
+    }
+  }
+  @media (max-width:309px){
+    .btn-primary{
+      width: 70%;
+      margin-left: 15%;
+      margin-top: 5%;
+    }
   }
   

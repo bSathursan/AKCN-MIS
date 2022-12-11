@@ -9,3 +9,103 @@ mat-drawer{
 mat-drawer-container{
     height: 100%;
 }
+@media (max-width:1200px){
+    mat-drawer{
+        width: 18%;
+    }
+}
+@media (max-width:1120px){
+    mat-drawer{
+        width: 20%;
+    }
+}
+@media (max-width:910px){
+    mat-drawer{
+        width: 23%;
+    }
+}
+@media (max-width:800px){
+    mat-drawer{
+        width: 25%;
+    }
+}
+@media (max-width:743px){
+    mat-drawer{
+        width: 28%;
+    }
+}
+/* @media(max-width:689px){
+    mat-drawer{
+        display: none;
+    }
+} */
+@media (max-width:666px){
+    mat-drawer{
+        width: 30%;
+    }
+}
+@media (max-width:622px){
+    mat-drawer{
+        width: 33%;
+    }
+}
+@media (max-width:567px){
+    mat-drawer{
+        width: 35%;
+    }
+}
+@media (max-width:533px){
+    mat-drawer{
+        width: 37%;
+    }
+}
+@media (max-width:505px){
+    mat-drawer{
+        width: 40%;
+    }
+}
+@media (max-width:466px){
+    mat-drawer{
+        width: 43%;
+    }
+}
+@media (max-width:432px){
+    mat-drawer{
+        width: 45%;
+    }
+}
+@media (max-width:413px){
+    mat-drawer{
+        width: 48%;
+    }
+}
+@media (max-width:388px){
+    mat-drawer{
+        width: 50%;
+    }
+}
+@media (max-width:372px){
+    mat-drawer{
+        width: 53%;
+    }
+}
+@media (max-width:351px){
+    mat-drawer{
+        width: 55%;
+    }
+}
+@media (max-width:339px){
+    mat-drawer{
+        width: 58%;
+    }
+}
+@media (max-width:321px){
+    mat-drawer{
+        width: 60%;
+    }
+}
+@media (max-width:310px){
+    mat-drawer{
+        width: 65%;
+    }
+}

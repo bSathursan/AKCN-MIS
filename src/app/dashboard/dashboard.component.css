@@ -144,3 +144,9 @@ tbody {
   color: #707070;
   opacity: 1;
 }
+@media (max-width: 650px) {
+  .container-1{
+   flex: 100%;
+   max-width: fit-content;
+  }
+}

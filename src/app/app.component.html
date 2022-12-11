@@ -1,7 +1,15 @@
 <mat-drawer-container>
-    <mat-drawer mode="side" [opened]="sideBarOpen">
-        <app-sidenav></app-sidenav>
-    </mat-drawer>
-    <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
-    <router-outlet></router-outlet>
+  <mat-drawer
+    mode="side"
+    [opened]="sideBarOpen"
+    #snav
+    [opened]="screenWidth > 689"
+    [mode]="screenWidth > 689 ? 'side' : 'over'"
+    fixedTopGap="56"
+  >
+      <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+
+  <router-outlet></router-outlet>
 </mat-drawer-container>

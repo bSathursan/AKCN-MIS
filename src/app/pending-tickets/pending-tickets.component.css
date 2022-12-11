@@ -10,10 +10,6 @@
   row-gap: 20px;
 }
 .container-1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
   height: 6rem;
 }
 .container-2 {
@@ -36,6 +32,14 @@
   letter-spacing: 0px;
   color: #8990ad;
   opacity: 1;
+}
+.font-weight-normal {
+  text-align: center;
+  font: normal normal normal 15px/25px Poppins;
+  letter-spacing: 0px;
+  color: #8990ad;
+  opacity: 1;
+  padding: 15px 0px 0px 0px;
 }
 .container-3 {
   display: flex;
@@ -63,7 +67,7 @@
   color: #8990ad;
   opacity: 1;
 }
-.dropdown-item:hover{
+.dropdown-item:hover {
   background: #fff;
 }
 .bi {
@@ -71,7 +75,7 @@
 }
 .img-fluid {
   width: fit-content;
-  height: 100%;
+  height: 130%;
 }
 .card {
   border: 0px solid #fff;
@@ -140,10 +144,20 @@
   font-family: "Poppins", sans-serif;
   border: 0px solid #6468e7;
 }
-table {
+.container-6 {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+.mat-table {
   background-color: #fff;
-  width: 100%;
   box-shadow: none;
+  overflow: auto;
+  max-height: 500px;
+}
+.mobile-lable {
+  display: none;
 }
 .mat-header-cell {
   text-align: center;
@@ -155,29 +169,161 @@ table {
   font-family: "Poppins", sans-serif;
   background-color: #fff;
   border: 0px;
-  padding: 0px 0px 0px 100px;
 }
-td {
+.mat-cell {
   text-align: center;
   font: normal normal normal 12px/22px Poppins;
   letter-spacing: 0px;
   color: #707070;
   opacity: 1;
-  padding: 12px;
-}
-.mat-cell {
-  padding: 0px 0px 0px 90px;
 }
 .mat-cell {
   border: 0px;
 }
-.mat-row:nth-child(odd) {
+.mat-row {
+  border: 0px;
+}
+.mat-header-row {
+  border: 0px;
+}
+mat-row:nth-child(odd) {
   background: #f8f8f8;
   border-radius: 10px;
 }
 
 ::ng-deep .mat-sort-header-arrow {
-  color: #027AFE;
+  color: #027afe;
   transform: none !important;
   opacity: 1 !important;
+}
+@media (min-width: 800px) {
+  .font-weight-normal {
+    padding: 20px 0px 0px 0px;
+  }
+}
+@media(max-width:800px){
+  .mobile-lable {
+    width: 80px;
+    display: flex;
+    font-weight: bold;
+  }
+  .semi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .mat-header-row {
+    display: none;
+  }
+  .mat-cell:first-of-type,
+  mat-header-cell:first-of-type{
+    padding-left: 0px;
+  }
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+    padding: 8px 24px;
+  }
+}
+@media (max-width: 767px) {
+  .container-4 {
+    padding: 0px 0px 0px 15px;
+  }
+}
+@media (max-width: 650px) {
+  .img-fluid {
+    width: fit-content;
+    height: 200%;
+  }
+  .font-weight-normal {
+    padding: 30px 0px 0px 0px;
+  }
+}
+@media (max-width: 650px) {
+  .img-fluid {
+    width: fit-content;
+    height: 200%;
+  }
+  .font-weight-normal {
+    padding: 30px 0px 0px 0px;
+  }
+}
+@media (max-width: 631px) {
+  .img-fluid {
+    width: fit-content;
+    height: 180%;
+  }
+  .font-weight-normal {
+    padding: 25px 0px 0px 0px;
+  }
+}
+/* @media (max-width: 600px) {
+  .mobile-lable {
+    width: 80px;
+    display: flex;
+    font-weight: bold;
+  }
+  .semi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .mat-header-row {
+    display: none;
+  }
+  .mat-cell:first-of-type,
+  mat-header-cell:first-of-type{
+    padding-left: 0px;
+  }
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+    padding: 8px 24px;
+  }
+} */
+@media (max-width: 575px) {
+  .container-3 {
+    margin-top: -16%;
+  }
+  .btn-primary {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+  }
+}
+@media (max-width: 575px) {
+  .container-3 {
+    margin-top: -18%;
+  }
+}
+@media (max-width: 450px) {
+  .container-3 {
+    margin-top: -20%;
+  }
+}
+@media (max-width: 410px) {
+  .container-3 {
+    margin-top: -23%;
+  }
+}
+@media (max-width: 400px) {
+  .container-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 0%;
+    margin-left: -5%;
+  }
+  .card {
+    margin-top: 20%;
+  }
+}
+@media (max-width: 380px) {
+  .img-fluid {
+    width: fit-content;
+    height: 100%;
+  }
+  .font-weight-normal {
+    padding: 15px 0px 0px 0px;
+  }
 }

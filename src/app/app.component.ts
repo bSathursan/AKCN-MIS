@@ -8,7 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'AKCN-MIS';
   sideBarOpen = true;
+  screenWidth: number;
 
+  constructor() { 
+    this.screenWidth = window.innerWidth;
+    window.onresize = () => {
+      // set screenWidth on screen size change
+      this.screenWidth = window.innerWidth;
+    };
+  }
   sideBarToggler(){
     this.sideBarOpen = !this.sideBarOpen
   }

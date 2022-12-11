@@ -3,50 +3,57 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="container-5">
         <div class="container-1">
-          <div class="container-2">
-            <p class="font-weight-bold mt-4">Tickets</p>
-            <p class="font-weight-light">Tickets > Pending Tickets</p>
-          </div>
-          <div class="container-3">
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              id="dropdownMenu2"
-              data-bs-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <img class="img-fluid" src="../../assets/admin.png" alt="admin" />
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><i class="bi bi-person"></i> Profile</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><i class="bi bi-chat-dots"></i> Feedback</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><i class="bi bi-question-circle"></i> Help</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="#"
-                  ><i class="bi bi-box-arrow-right"></i> Logout</a
-                >
-              </li>
-            </ul>
-            <p class="font-weight-light mt-3">Alex Kumar</p>
+          <div class="row">
+            <div class="col-sm-5 col-md-4 col-lg-4 col-xl-4 container-2">
+              <p class="font-weight-bold mt-4">Tickets</p>
+              <p class="font-weight-light">Tickets > Pending Tickets</p>
+            </div>
+            <div class="col-sm-2 col-md-4 col-lg-4 col-xl-4"></div>
+            <div class="col-sm-5 col-md-4 col-lg-4 col-xl-4 container-3">
+              <button
+                class="btn dropdown-toggle"
+                type="button"
+                id="dropdownMenu2"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img
+                  class="img-fluid"
+                  src="../../assets/admin.png"
+                  alt="admin"
+                />
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-person"></i> Profile</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-chat-dots"></i> Feedback</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-question-circle"></i> Help</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bi bi-box-arrow-right"></i> Logout</a
+                  >
+                </li>
+              </ul>
+              <p class="font-weight-normal">Alex Kumar</p>
+            </div>
           </div>
         </div>
         <div class="card">
           <div class="card-body">
             <div class="row mt-4">
-              <div class="mb-3 col-md-3">
+              <div class="mb-3 col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3">
                 <input
                   type="text"
                   class="form-control"
@@ -54,8 +61,8 @@
                   placeholder="Search"
                 />
               </div>
-              <div class="mb-3 col-lg-6"></div>
-              <div class="col-lg-3">
+              <div class="mb-3 col-12 col-sm-12 col-md-3 col-lg-4 col-xl-6"></div>
+              <div class="col-3 col-sm-3 col-md-5 col-lg-4 col-xl-3">
                 <div class="row container-4">
                   <button type="button" class="btn btn-danger col-md-4">
                     Excel
@@ -70,68 +77,79 @@
               </div>
             </div>
             <div class="container-6">
-              <table
-                mat-table
+              <mat-table
+                #table
                 matSort
                 [dataSource]="dataSource"
                 class="mat-elevation-z8 mt-4"
               >
                 <ng-container matColumnDef="ticket">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>
                     TICKET
-                  </th>
-                  <td mat-cell *matCellDef="let element">
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <span class="mobile-lable">TICKET <span class="semi">:</span> </span>
                     {{ element.ticket }}
-                  </td>
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="id">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
-                  <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header
+                    >ID</mat-header-cell
+                  >
+                  <mat-cell *matCellDef="let element">
+                    <span class="mobile-lable">ID <span class="semi">:</span> </span
+                    >{{ element.id }}</mat-cell
+                  >
                 </ng-container>
 
                 <ng-container matColumnDef="subject">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>
                     SUBJECT
-                  </th>
-                  <td mat-cell *matCellDef="let element">
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <span class="mobile-lable">SUBJECT <span class="semi">:</span> </span>
                     {{ element.subject }}
-                  </td>
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="phone">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>
                     PHONE
-                  </th>
-                  <td mat-cell *matCellDef="let element">
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <span class="mobile-lable">PHONE <span class="semi">:</span> </span>
                     {{ element.phone }}
-                  </td>
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="createdby">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>
                     CREATED BY
-                  </th>
-                  <td mat-cell *matCellDef="let element">
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <span class="mobile-lable">CREATED BY <span class="semi">:</span> </span>
                     {{ element.createdby }}
-                  </td>
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="createdat">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>
                     CREATED AT
-                  </th>
-                  <td mat-cell *matCellDef="let element">
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <span class="mobile-lable">CREATED AT <span class="semi">:</span> </span>
                     {{ element.createdat }}
-                  </td>
+                  </mat-cell>
                 </ng-container>
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr
-                  mat-row
+                <mat-header-row
+                  *matHeaderRowDef="displayedColumns"
+                ></mat-header-row>
+                <mat-row
                   *matRowDef="let row; columns: displayedColumns"
-                ></tr>
-              </table>
+                ></mat-row>
+              </mat-table>
             </div>
           </div>
         </div>

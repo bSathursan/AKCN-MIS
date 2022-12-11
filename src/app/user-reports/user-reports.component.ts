@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user-reports',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserReportsComponent implements OnInit {
 
-  constructor() { }
+  fg : FormGroup;
+
+  constructor(private formbuilder : FormBuilder) { 
+    this.fg = this.formbuilder.group({
+      eventDate1 : [],
+      eventDate2 : []
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  submitForm(){
+    if(! this.fg.valid){
+      return;
+    }
+    alert('Succesfull')
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild, HostListener } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',
@@ -15,5 +16,7 @@ export class HeaderComponent implements OnInit {
   toggleSidebar(){
     this.toggleSidebarForMe.emit();
   }
+
+  
 
 }

@@ -16,6 +16,7 @@ import { AddArrearsComponent } from './add-arrears/add-arrears.component';
 import { UserReportsComponent } from './user-reports/user-reports.component';
 import { PendingTicketsComponent } from './pending-tickets/pending-tickets.component';
 import { UsersComponent } from './users/users.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { UsersComponent } from './users/users.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

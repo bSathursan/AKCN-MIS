@@ -1,176 +1,211 @@
 <mat-nav-list>
-  <div class="logo mt-xl-4">
-    <img src="../../assets/admin.png" class="img-fluid" alt="admin" />
-    <div class="container-1">
-      <p class="font-weight-bold">ALEX KUMAR</p>
-      <p class="font-weight-light">Admin</p>
+    <div class="logo mt-xl-4">
+      <img src="../../assets/admin.png" class="img-fluid" alt="admin" />
+      <div class="container-1">
+        <p class="font-weight-bold">ALEX KUMAR</p>
+        <p class="font-weight-light">Admin</p>
+      </div>
     </div>
-  </div>
-  <mat-divider></mat-divider>
-  <a
-    mat-list-item
-    routerLink="/dashboard"
-    routerLinkActivate="list-item-active"
-    class="mt-4"
-  >
-    <mat-icon class="col-md-3">dashboard</mat-icon>
-    <div class="col-md-1"></div>
-    <div class="col-md-3">Dashboard</div>
-    <div class="col-md-4"></div>
-    <div class="col-md-1"></div>
-  </a>
-  <mat-expansion-panel
-    (opened)="panelOpenState1 = true"
-    (closed)="panelOpenState1 = false"
-    hideToggle="true"
-  >
-    <mat-expansion-panel-header>
-      <a
-        mat-list-item
-        routerLink="#"
-        routerLinkActivate="list-item-active"
-        class="mt-2"
+    <mat-divider></mat-divider>
+    <a
+      mat-list-item
+      routerLink="/dashboard"
+      routerLinkActivate="list-item-active"
+      class="mt-4"
+    >
+      <mat-icon class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3 icon"
+        >dashboard</mat-icon
       >
-        <mat-icon class="col-md-3">receipt</mat-icon>
-        <div class="col-md-1"></div>
-        <div class="col-md-3">Tickets</div>
-        <div class="col-md-4"></div>
-        <mat-panel-description class="col-md-1">
-          <mat-icon *ngIf="!panelOpenState1">add_circle_outline</mat-icon>
-          <mat-icon *ngIf="panelOpenState1">remove_circle_outline</mat-icon>
-        </mat-panel-description>
-      </a>
-    </mat-expansion-panel-header>
-    <div class="container-2">
-      <a class="link" routerLink="ticket/createticket">Create Tickets</a>
-      <a class="link" routerLink="tickets/pendingtickets">Pending Tickets</a>
-      <a class="link" routerLink="#">Assigned Tickets</a>
-      <a class="link" routerLink="#">Closed Tickets</a>
-      <a class="link" routerLink="#">Cancelled Tickets</a>
-    </div>
-  </mat-expansion-panel>
+      <div class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">Dashboard</div>
+      <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+      <div class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+    </a>
+    <mat-expansion-panel
+      (opened)="panelOpenState1 = true"
+      (closed)="panelOpenState1 = false"
+      hideToggle="true"
+    >
+      <mat-expansion-panel-header>
+        <a
+          mat-list-item
+          routerLink="#"
+          routerLinkActivate="list-item-active"
+          class="mt-2"
+        >
+          <mat-icon class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3"
+            >receipt</mat-icon
+          >
+          <div class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+          <div class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">Tickets</div>
+          <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+          <mat-panel-description
+            class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"
+          >
+            <mat-icon *ngIf="!panelOpenState1">add_circle_outline</mat-icon>
+            <mat-icon *ngIf="panelOpenState1">remove_circle_outline</mat-icon>
+          </mat-panel-description>
+        </a>
+      </mat-expansion-panel-header>
+      <div class="container-2">
+        <a class="link" routerLink="ticket/createticket">Create Tickets</a>
+        <a class="link" routerLink="tickets/pendingtickets">Pending Tickets</a>
+        <a class="link" routerLink="#">Assigned Tickets</a>
+        <a class="link" routerLink="#">Closed Tickets</a>
+        <a class="link" routerLink="#">Cancelled Tickets</a>
+      </div>
+    </mat-expansion-panel>
 
-  <mat-expansion-panel
-    (opened)="panelOpenState2 = true"
-    (closed)="panelOpenState2 = false"
-    hideToggle="true"
-  >
-    <mat-expansion-panel-header>
-      <a mat-list-item routerLink="/home" routerLinkActivate="list-item-active">
-        <mat-icon class="col-md-3">how_to_reg</mat-icon>
-        <div class="col-md-1"></div>
-        <div class="col-md-3">Requests</div>
-        <div class="col-md-4"></div>
-        <mat-panel-description class="col-md-1">
-          <mat-icon *ngIf="!panelOpenState2">add_circle_outline</mat-icon>
-          <mat-icon *ngIf="panelOpenState2">remove_circle_outline</mat-icon>
-        </mat-panel-description>
-      </a>
-    </mat-expansion-panel-header>
-    <div class="container-2">
-      <a class="link" routerLink="#">All Requests</a>
-      <a class="link" routerLink="#">Pending Requests</a>
-      <a class="link" routerLink="#">Cancelled Tickets</a>
-    </div>
-  </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="panelOpenState2 = true"
+      (closed)="panelOpenState2 = false"
+      hideToggle="true"
+    >
+      <mat-expansion-panel-header>
+        <a
+          mat-list-item
+          routerLink="/home"
+          routerLinkActivate="list-item-active"
+        >
+          <mat-icon class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3"
+            >how_to_reg</mat-icon
+          >
+          <div class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+          <div class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">Requests</div>
+          <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+          <mat-panel-description
+            class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"
+          >
+            <mat-icon *ngIf="!panelOpenState2">add_circle_outline</mat-icon>
+            <mat-icon *ngIf="panelOpenState2">remove_circle_outline</mat-icon>
+          </mat-panel-description>
+        </a>
+      </mat-expansion-panel-header>
+      <div class="container-2">
+        <a class="link" routerLink="#">All Requests</a>
+        <a class="link" routerLink="#">Pending Requests</a>
+        <a class="link" routerLink="#">Cancelled Tickets</a>
+      </div>
+    </mat-expansion-panel>
 
-  <mat-expansion-panel
-    (opened)="panelOpenState3 = true"
-    (closed)="panelOpenState3 = false"
-    hideToggle="true"
-  >
-    <mat-expansion-panel-header>
-      <a mat-list-item routerLink="#" routerLinkActivate="list-item-active">
-        <mat-icon class="col-md-3">swap_vert</mat-icon>
-        <div class="col-md-1"></div>
-        <div class="col-md-3">Connections</div>
-        <div class="col-md-4"></div>
-        <mat-panel-description class="col-md-1">
-          <mat-icon *ngIf="!panelOpenState3">add_circle_outline</mat-icon>
-          <mat-icon *ngIf="panelOpenState3">remove_circle_outline</mat-icon>
-        </mat-panel-description>
-      </a>
-    </mat-expansion-panel-header>
-    <div class="container-2">
-      <a class="link" routerLink="#">All Connections</a>
-      <a class="link" routerLink="connection/newconnection">New Connections</a>
-      <a class="link" routerLink="#">After Connections</a>
-    </div>
-  </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="panelOpenState3 = true"
+      (closed)="panelOpenState3 = false"
+      hideToggle="true"
+    >
+      <mat-expansion-panel-header>
+        <a mat-list-item routerLink="#" routerLinkActivate="list-item-active">
+          <mat-icon class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3"
+            >swap_vert</mat-icon
+          >
+          <div class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+          <div class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            Connections
+          </div>
+          <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+          <mat-panel-description
+            class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"
+          >
+            <mat-icon *ngIf="!panelOpenState3">add_circle_outline</mat-icon>
+            <mat-icon *ngIf="panelOpenState3">remove_circle_outline</mat-icon>
+          </mat-panel-description>
+        </a>
+      </mat-expansion-panel-header>
+      <div class="container-2">
+        <a class="link" routerLink="#">All Connections</a>
+        <a class="link" routerLink="connection/newconnection"
+          >New Connections</a
+        >
+        <a class="link" routerLink="#">After Connections</a>
+      </div>
+    </mat-expansion-panel>
 
-  <mat-expansion-panel
-    (opened)="panelOpenState4 = true"
-    (closed)="panelOpenState4 = false"
-    hideToggle="true"
-  >
-    <mat-expansion-panel-header>
-      <a mat-list-item routerLink="#" routerLinkActivate="list-item-active">
-        <mat-icon class="col-md-3">payment</mat-icon>
-        <div class="col-md-1"></div>
-        <div class="col-md-3">Payment</div>
-        <div class="col-md-4"></div>
-        <mat-panel-description class="col-md-1">
-          <mat-icon *ngIf="!panelOpenState4">add_circle_outline</mat-icon>
-          <mat-icon *ngIf="panelOpenState4">remove_circle_outline</mat-icon>
-        </mat-panel-description>
-      </a>
-    </mat-expansion-panel-header>
-    <div class="container-2">
-      <a class="link" routerLink="#">Make Payment</a>
-      <a class="link" routerLink="#">Adjust Payment</a>
-      <a class="link" routerLink="payment/addarrears">Add Arrears</a>
-      <a class="link" routerLink="#">Add Rental</a>
-    </div>
-  </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="panelOpenState4 = true"
+      (closed)="panelOpenState4 = false"
+      hideToggle="true"
+    >
+      <mat-expansion-panel-header>
+        <a mat-list-item routerLink="#" routerLinkActivate="list-item-active">
+          <mat-icon class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3"
+            >payment</mat-icon
+          >
+          <div class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+          <div class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">Payment</div>
+          <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+          <mat-panel-description
+            class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"
+          >
+            <mat-icon *ngIf="!panelOpenState4">add_circle_outline</mat-icon>
+            <mat-icon *ngIf="panelOpenState4">remove_circle_outline</mat-icon>
+          </mat-panel-description>
+        </a>
+      </mat-expansion-panel-header>
+      <div class="container-2">
+        <a class="link" routerLink="#">Make Payment</a>
+        <a class="link" routerLink="#">Adjust Payment</a>
+        <a class="link" routerLink="payment/addarrears">Add Arrears</a>
+        <a class="link" routerLink="#">Add Rental</a>
+      </div>
+    </mat-expansion-panel>
 
-  <mat-expansion-panel
-    (opened)="panelOpenState5 = true"
-    (closed)="panelOpenState5 = false"
-    hideToggle="true"
-  >
-    <mat-expansion-panel-header>
-      <a mat-list-item routerLink="#" routerLinkActivate="list-item-active">
-        <mat-icon class="col-md-3">bug_report</mat-icon>
-        <div class="col-md-1"></div>
-        <div class="col-md-3">Reports</div>
-        <div class="col-md-4"></div>
-        <mat-panel-description class="col-md-1">
-          <mat-icon *ngIf="!panelOpenState5">add_circle_outline</mat-icon>
-          <mat-icon *ngIf="panelOpenState5">remove_circle_outline</mat-icon>
-        </mat-panel-description>
-      </a>
-    </mat-expansion-panel-header>
-    <div class="container-2">
-      <a class="link" routerLink="reports/userreports">User Reports</a>
-      <a class="link" routerLink="#">Collection Reports</a>
-      <a class="link" routerLink="#">Due Reports</a>
-      <a class="link" routerLink="#">Unpaid Reports</a>
-    </div>
-  </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="panelOpenState5 = true"
+      (closed)="panelOpenState5 = false"
+      hideToggle="true"
+    >
+      <mat-expansion-panel-header>
+        <a mat-list-item routerLink="#" routerLinkActivate="list-item-active">
+          <mat-icon class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3"
+            >bug_report</mat-icon
+          >
+          <div class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+          <div class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">Reports</div>
+          <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+          <mat-panel-description
+            class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"
+          >
+            <mat-icon *ngIf="!panelOpenState5">add_circle_outline</mat-icon>
+            <mat-icon *ngIf="panelOpenState5">remove_circle_outline</mat-icon>
+          </mat-panel-description>
+        </a>
+      </mat-expansion-panel-header>
+      <div class="container-2">
+        <a class="link" routerLink="reports/userreports">User Reports</a>
+        <a class="link" routerLink="#">Collection Reports</a>
+        <a class="link" routerLink="#">Due Reports</a>
+        <a class="link" routerLink="#">Unpaid Reports</a>
+      </div>
+    </mat-expansion-panel>
 
-  <mat-expansion-panel
-    (opened)="panelOpenState6 = true"
-    (closed)="panelOpenState6 = false"
-    hideToggle="true"
-  >
-    <mat-expansion-panel-header>
-      <a mat-list-item routerLink="#" routerLinkActivate="list-item-active">
-        <mat-icon class="col-md-3">settings</mat-icon>
-        <div class="col-md-1"></div>
-        <div class="col-md-3">Settings</div>
-        <div class="col-md-4"></div>
-        <mat-panel-description class="col-md-1">
-          <mat-icon *ngIf="!panelOpenState6">add_circle_outline</mat-icon>
-          <mat-icon *ngIf="panelOpenState6">remove_circle_outline</mat-icon>
-        </mat-panel-description>
-      </a>
-    </mat-expansion-panel-header>
-    <div class="container-2">
-      <a class="link" routerLink="setting/user">User</a>
-      <a class="link" routerLink="#">Roles</a>
-      <a class="link" routerLink="#">Roads</a>
-      <a class="link" routerLink="#">Areas</a>
-      <a class="link" routerLink="#">Branches</a>
-    </div>
-  </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="panelOpenState6 = true"
+      (closed)="panelOpenState6 = false"
+      hideToggle="true"
+    >
+      <mat-expansion-panel-header>
+        <a mat-list-item routerLink="#" routerLinkActivate="list-item-active">
+          <mat-icon class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3"
+            >settings</mat-icon
+          >
+          <div class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+          <div class="col-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">Settings</div>
+          <div class="col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+          <mat-panel-description
+            class="col-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"
+          >
+            <mat-icon *ngIf="!panelOpenState6">add_circle_outline</mat-icon>
+            <mat-icon *ngIf="panelOpenState6">remove_circle_outline</mat-icon>
+          </mat-panel-description>
+        </a>
+      </mat-expansion-panel-header>
+      <div class="container-2">
+        <a class="link" routerLink="setting/user">User</a>
+        <a class="link" routerLink="#">Roles</a>
+        <a class="link" routerLink="#">Roads</a>
+        <a class="link" routerLink="#">Areas</a>
+        <a class="link" routerLink="#">Branches</a>
+      </div>
+    </mat-expansion-panel>
+    <img src="../../assets/logo.png" class="img-thumbnail" alt="logo" />
 </mat-nav-list>

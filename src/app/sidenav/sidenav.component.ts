@@ -13,7 +13,15 @@ export class SidenavComponent implements OnInit {
   panelOpenState5 = false;
   panelOpenState6 = false;
 
-  constructor() { }
+  // screenWidth: number;
+
+  constructor() { 
+    // this.screenWidth = window.innerWidth;
+    // window.onresize = () => {
+      
+    //   this.screenWidth = window.innerWidth;
+    // };
+  }
 
   ngOnInit(): void {
   }
