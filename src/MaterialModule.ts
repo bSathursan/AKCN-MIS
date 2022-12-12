@@ -11,6 +11,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSortModule} from '@angular/material/sort';
 import { MatTableModule} from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 @NgModule({
     exports:[
@@ -25,7 +26,8 @@ import { MatButtonModule } from '@angular/material/button';
        MatNativeDateModule,
        MatSortModule,
        MatTableModule,
-       MatButtonModule
+       MatButtonModule,
+       MatPaginatorModule
     ]
 })
 

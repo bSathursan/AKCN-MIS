@@ -1,24 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSort } from '@angular/material/sort';
-
-
-export interface PeriodicElement {
-  id: string;
-  name: string;
-  role: string;
-  branch: string;
-  status : string;
-  createdat : string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 'AK190001', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
-  {id: 'AK190001', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
-  {id: 'AK190001', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
-  {id: 'AK190001', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
-  {id: 'AK190001', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
-  {id: 'AK190001', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
-];
+import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-users',
@@ -27,17 +11,32 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class UsersComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'role', 'branch', 'status', 'createdat'];
-  dataSource = ELEMENT_DATA;
 
-  @ViewChild(MatSort) sort : MatSort
+  Userdata : User[] = [
+    {id: 'AK190004', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
+    {id: 'AK190001', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
+    {id: 'AK190004', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
+    {id: 'AK190004', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
+    {id: 'AK190004', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
+    {id: 'AK190004', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''},
+    {id: 'AK190004', name: 'ALEX KUMAR', role: 'ADMIN', branch: 'HEAD QUARTERS - KALMUNAI',status: 'THARSHIKA',createdat: ''}
+  ];
+  
+  dataSource = new MatTableDataSource(this.Userdata)
+  dataSourceWithPageSize = new MatTableDataSource(this.Userdata);
 
-  constructor( ) { }
-  finaldata:any
+  constructor() {}
+  @ViewChild('paginator') paginator : MatPaginator;
+  @ViewChild('paginatorPageSize') paginatorPageSize: MatPaginator;
+  @ViewChild('exmTbSort') exmTbSort : MatSort;
 
-  ngOnInit(): void {
-    if(this.sort){
-      this.dataSource.sort
-    }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSourceWithPageSize.paginator = this.paginatorPageSize;
+
+    this.exmTbSort.disableClear = true;
+    this.dataSource.sort = this.exmTbSort;
   }
 
+  ngOnInit(): void {}
 }

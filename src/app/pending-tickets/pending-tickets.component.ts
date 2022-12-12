@@ -1,25 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
-
-
-export interface PeriodicElement {
-  ticket: string;
-  id: string;
-  subject: string;
-  phone: string;
-  createdby : string;
-  createdat : string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-  {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-  {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-  {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-  {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-  {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'}
-];
-
+import { MatTableDataSource } from '@angular/material/table';
+import { Ticket } from 'src/model/pendingTickets';
 
 @Component({
   selector: 'app-pending-tickets',
@@ -28,17 +10,28 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PendingTicketsComponent implements OnInit {
   displayedColumns: string[] = ['ticket', 'id', 'subject', 'phone', 'createdat', 'createdby'];
-  dataSource = ELEMENT_DATA;
 
-  @ViewChild(MatSort) sort : MatSort
+  pendingTickets: Ticket[] = [
+    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
+    {ticket: 'TKT03241', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
+    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
+    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
+    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
+    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'}
+  ];
 
-  constructor( ) { }
-  finaldata:any
+  dataSource = new MatTableDataSource(this.pendingTickets)
+  
+  @ViewChild('exmTbSort') exmTbSort : MatSort
+
+  constructor( ) {}
+
+  ngAfterViewInit() {
+    this.exmTbSort.disableClear = true;
+    this.dataSource.sort = this.exmTbSort;
+  }
 
   ngOnInit(): void {
-    if(this.sort){
-      this.dataSource.sort
-    }
   }
 
 

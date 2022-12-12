@@ -13,8 +13,9 @@ button {
   outline: none;
   background: transparent;
 }
-.material-icons {
+.mat-icon{
   font-size: 30px;
   color: #000000;
-  opacity: 0.8;
+  opacity: 0.6;
+  margin-left: -50%;
 }
