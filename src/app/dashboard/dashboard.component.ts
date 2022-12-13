@@ -20,12 +20,12 @@ export class DashboardComponent implements OnInit {
      
       type: 'line',
       data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Oct', 'Nov', 'Dec'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug','sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
-          data: [3, 4, 2, 4, 5, 6, 5, 4, 5, 3, 3, 6],
+          data: [3, 4, 2, 4, 5, 6, 5, 4, 5, 3, 4, 6],
           borderWidth: 2,
           borderColor: '#2CD9C5',
-          // backgroundColor: '#E5FFCC',
+          backgroundColor: ['#2CD9C51A', '#2E5BFF00'],
           fill: true
         }]
       },

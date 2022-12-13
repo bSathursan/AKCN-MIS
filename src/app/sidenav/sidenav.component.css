@@ -77,6 +77,10 @@
   transform: translateX(-50%);
   border: 0px solid #fff;
 }
+.mat-content:hover,
+.mat-content:focus{
+  background: none;
+}
 /* .mat-expansion-panel-header.mat-expanded,
 .mat-expansion-panel-header.mat-expanded:hover,
 .mat-expansion-panel-header.mat-expanded:focus {

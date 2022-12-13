@@ -149,14 +149,13 @@
                   *matHeaderRowDef="displayedColumns"
                 ></mat-header-row>
                 <mat-row
-                  *matRowDef="let row; columns: displayedColumns"
+                  *matRowDef="let row; columns: displayedColumns | paginate : {itemsPerPage: 10, currentPage: page, totalItems:totalLength}"
                 ></mat-row>
               </mat-table>
-              <mat-paginator
-                #paginator
-                [pageSizeOptions]="[2, 4, 6]"
-                showFirstLastButtons
-              ></mat-paginator>
+              <div class="containar-7">
+                <p class="text-justify mt-4">Showing 1 to 10 of 51 entries</p>
+                <pagination-controls class="my-pagination mt-3" (pageChange)="page = $event"></pagination-controls>
+              </div>
             </div>
           </div>
         </div>
