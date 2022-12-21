@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Ticket } from 'src/model/pendingTickets';
+import { datasets, Ticket } from 'src/model/pendingTickets';
+import {SortableHeaderDirectivetic, SortEvent, compare} from '../../sort/ticket.sort';
 
 @Component({
   selector: 'app-pending-tickets',
@@ -9,29 +10,33 @@ import { Ticket } from 'src/model/pendingTickets';
   styleUrls: ['./pending-tickets.component.css']
 })
 export class PendingTicketsComponent implements OnInit {
-  displayedColumns: string[] = ['ticket', 'id', 'subject', 'phone', 'createdat', 'createdby'];
 
-  pendingTickets: Ticket[] = [
-    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-    {ticket: 'TKT03241', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'},
-    {ticket: 'TKT03242', id: 'KKU07189', subject: 'UNCLEAR', phone: '0778574965',createdat: 'THARSHIKA', createdby: '2021-05-18 11:45:20'}
-  ];
-
-  dataSource = new MatTableDataSource(this.pendingTickets)
+  data : Array<Ticket> = datasets;
+  Tickets : Array<Ticket> = datasets;
+  @ViewChildren(SortableHeaderDirectivetic)
+  headers: QueryList<SortableHeaderDirectivetic>;
   
-  @ViewChild('exmTbSort') exmTbSort : MatSort
-
   constructor( ) {}
 
-  ngAfterViewInit() {
-    this.exmTbSort.disableClear = true;
-    this.dataSource.sort = this.exmTbSort;
+  ngOnInit() {
   }
+  onSort({column, direction}: SortEvent){
+    //reset other headerss
+    this.headers.forEach((header: { sortabletic: string; direction: string; }) => {
+      if(header.sortabletic!== column){
+        header.direction ='';
+      }
+    });
 
-  ngOnInit(): void {
+    //sorting
+    if(direction === '' || column === ''){
+      this.Tickets = this.data;
+    } else {
+      this.Tickets = [...this.data].sort((a,b) => {
+        const res = compare(a[column], b[column]);
+        return direction === 'asc' ? res : -res;
+      })
+    }
   }
 
 

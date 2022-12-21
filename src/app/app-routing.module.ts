@@ -13,12 +13,12 @@ const routes: Routes = [
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'dashboard', component:DashboardComponent},
-  {path:'ticket/createticket', component:CreateTicketsComponent},
-  {path:'connection/newconnection', component:NewConnectionComponent},
-  {path:'payment/addarrears', component:AddArrearsComponent},
-  {path:'reports/userreports', component:UserReportsComponent},
-  {path:'tickets/pendingtickets', component:PendingTicketsComponent},
-  {path:'setting/user', component:UsersComponent}
+  {path:'createticket', component:CreateTicketsComponent},
+  {path:'newconnection', component:NewConnectionComponent},
+  {path:'addarrears', component:AddArrearsComponent},
+  {path:'userreports', component:UserReportsComponent},
+  {path:'pendingtickets', component:PendingTicketsComponent},
+  {path:'user', component:UsersComponent}
 ];
 
 @NgModule({

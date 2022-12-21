@@ -52,7 +52,7 @@
         </div>
         <div class="card">
           <div class="card-body">
-            <div class="row mt-4">
+            <div class="row mt-2">
               <div class="mb-3 col-8 col-sm-5 col-md-3 col-lg-3 col-xl-3">
                 <input
                   type="text"
@@ -72,89 +72,54 @@
               </button>
             </div>
             <div class="container-6">
-              <mat-table
-                matSort
-                [dataSource]="dataSource"
-                class="mat-elevation-z8 mt-4"
-                #exmTbSort="matSort"
-              >
-                <ng-container matColumnDef="id">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header
-                    >ID</mat-header-cell
-                  >
-                  <mat-cell *matCellDef="let element">
-                    <span class="mobile-lable">ID</span>
-                    {{ element.id }}
-                  </mat-cell>
-                </ng-container>
+              <div class="table-responsive mt-4">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th sortable="id" (sort)="onSort($event)" scope="col">
+                        <b>ID</b><i class="bi bi-arrow-down-up"></i>
+                      </th>
+                      <th sortable="name" (sort)="onSort($event)" scope="col">
+                        <b>NAME</b><i class="bi bi-arrow-down-up"></i>
+                      </th>
+                      <th sortable="role" (sort)="onSort($event)" scope="col">
+                        <b>ROLE</b><i class="bi bi-arrow-down-up"></i>
+                      </th>
+                      <th sortable="branch" (sort)="onSort($event)" scope="col">
+                        <b>BRANCH</b><i class="bi bi-arrow-down-up"></i>
+                      </th>
+                      <th sortable="status" (sort)="onSort($event)" scope="col">
+                        <b>STATUS</b><i class="bi bi-arrow-down-up"></i>
+                      </th>
+                      <th sortable="createdat" scope="col">CREATED AT</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let User of Users | paginate : config">
+                      <td>{{ User.id }}</td>
+                      <td>{{ User.name }}</td>
+                      <td>{{ User.role }}</td>
+                      <td>{{ User.branch }}</td>
+                      <td>{{ User.status }}</td>
+                      <td>
+                        <button class="btn btn-secondary" type="button">
+                          UPDATE
+                        </button>
+                        <button class="btn btn-danger" type="button">
+                          PASSWORD
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
-                <ng-container matColumnDef="name">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>
-                    NAME
-                  </mat-header-cell>
-                  <mat-cell mat-cell *matCellDef="let element">
-                    <span class="mobile-lable">NAME</span>
-                    {{ element.name }}</mat-cell
-                  >
-                </ng-container>
-
-                <ng-container matColumnDef="role">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>
-                    ROLE
-                  </mat-header-cell>
-                  <mat-cell mat-cell *matCellDef="let element">
-                    <span class="mobile-lable">ROLE</span>
-                    {{ element.role }}
-                  </mat-cell>
-                </ng-container>
-
-                <ng-container matColumnDef="branch">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>
-                    BRANCH
-                  </mat-header-cell>
-                  <mat-cell mat-cell *matCellDef="let element">
-                    <span class="mobile-lable">BRANCH</span>
-                    {{ element.branch }}
-                  </mat-cell>
-                </ng-container>
-
-                <ng-container matColumnDef="status">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>
-                    STATUS
-                  </mat-header-cell>
-                  <mat-cell mat-cell *matCellDef="let element">
-                    <span class="mobile-lable">STATUS</span>
-                    {{ element.status }}
-                  </mat-cell>
-                </ng-container>
-
-                <ng-container matColumnDef="createdat">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>
-                    CREATED AT
-                  </mat-header-cell>
-                  <mat-cell mat-cell *matCellDef="let element">
-                    <span class="mobile-lable">CREATED AT</span>
-                    <div class="container-7">
-                      <button mat-raised-button color="primary" class="primary">
-                        UPDATE
-                      </button>
-                      <button mat-raised-button color="warn" class="warn">
-                        PASSWORD
-                      </button>
-                    </div>
-                  </mat-cell>
-                </ng-container>
-
-                <mat-header-row
-                  *matHeaderRowDef="displayedColumns"
-                ></mat-header-row>
-                <mat-row
-                  *matRowDef="let row; columns: displayedColumns | paginate : {itemsPerPage: 10, currentPage: page, totalItems:totalLength}"
-                ></mat-row>
-              </mat-table>
               <div class="containar-7">
                 <p class="text-justify mt-4">Showing 1 to 10 of 51 entries</p>
-                <pagination-controls class="my-pagination mt-3" (pageChange)="page = $event"></pagination-controls>
+                <pagination-controls
+                  class="my-pagination mt-3"
+                  (pageChange)="pageChanged($event)"
+                ></pagination-controls>
               </div>
             </div>
           </div>

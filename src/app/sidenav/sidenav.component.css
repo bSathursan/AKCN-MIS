@@ -36,14 +36,28 @@
   width: 80%;
   margin-left: 10%;
 }
-.mat-icon {
+.icon {
   vertical-align: center;
   color: #999999;
   opacity: 1;
+  height: 40%;
+  width: fit-content;
+}
+.mat-button{
+  width: 100%;
+  text-align: left;
+  font: normal normal normal 12px/21px Poppins;
+  letter-spacing: 0px;
+  color: #000000;
+  padding: 10px 15px;
+}
+.text{
+  padding: 1px 0px 0px 25px;
+  font: normal normal normal 15px/21px Poppins;
 }
 .mat-list-item {
   text-align: left;
-  font: normal normal normal 12px/21px Poppins;
+  font: normal normal normal 15px/21px Poppins;
   letter-spacing: 0px;
   color: #000000;
   opacity: 0.4;
@@ -54,8 +68,11 @@
 .mat-expansion-panel-header {
   padding: 0px 0px;
 }
-.container-2 {
-  margin-bottom: -16%;
+:host ::ng-deep .mat-expansion-panel-body {
+  padding: 0px 0px 0px 20px; 
+}
+:host ::ng-deep .mat-expansion-panel-spacing{
+  margin: 0px 0px;
 }
 .link {
   display: flex;
@@ -77,67 +94,17 @@
   transform: translateX(-50%);
   border: 0px solid #fff;
 }
-.mat-content:hover,
-.mat-content:focus{
-  background: none;
-}
-/* .mat-expansion-panel-header.mat-expanded,
-.mat-expansion-panel-header.mat-expanded:hover,
-.mat-expansion-panel-header.mat-expanded:focus {
-  background: #027afe;
-  opacity: 0.1;
-  height: 50px;
-  margin: 10px;
-}
-.mat-icon:hover{
+.link-active {
   color: #027afe;
   opacity: 1;
 }
-a:active,
-a:hover {
+.icon:active {
   color: #027afe;
   opacity: 1;
-} */
-/* .mat-list-item:hover,
-.mat-list-item:active,
-.mat-list-item:visited {
-  background: #027afe 0% 0% no-repeat padding-box;
-  border-radius: 10px;
-  opacity: 0.1;
-  width: 90%;
-  margin-left: 5%;
-} */
-/* .mat-list-item:hover{
-  background:#027afe;
-  opacity: 0.1;;
-} */
-/* .mat-list-item:hover{
-  background: none;
 }
-.mat-expansion-panel-header:hover{
-  background: none;
-}
-::ng-deep.mat-list-item-content:hover{
-  background:#027afe;
-  opacity: 0.1;
-  border-radius: 10px;
-  margin: 0px 8px;
-}
-.mat-expansion-panel-header:hover{
-  cursor: pointer;
-  background: none;
-}
-::ng-deep.list-item-active:hover{
-  color: #027afe;
-  opacity: 1;
-} */
 @media (max-width: 1200px) {
   .logo {
     margin-top: 10%;
   }
 }
-/* @media (max-width: 689px) {
-  .mat-nav-list{
-    display: none;
-  }
-} */
+

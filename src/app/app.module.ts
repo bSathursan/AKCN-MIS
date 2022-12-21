@@ -18,6 +18,8 @@ import { PendingTicketsComponent } from './pending-tickets/pending-tickets.compo
 import { UsersComponent } from './users/users.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SortableHeaderDirective } from '../sort/user.sort';
+import { SortableHeaderDirectivetic } from '../sort/ticket.sort'
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddArrearsComponent,
     UserReportsComponent,
     PendingTicketsComponent,
-    UsersComponent
+    UsersComponent,
+    SortableHeaderDirective,
+    SortableHeaderDirectivetic
   ],
   imports: [
     BrowserModule,

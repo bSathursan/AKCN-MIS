@@ -1,8 +1,9 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { User } from '../../model/user';
+import { User, dataset } from '../../model/user';
+import {SortableHeaderDirective, SortEvent, compare} from '../../sort/user.sort'
 
 @Component({
   selector: 'app-users',
@@ -10,88 +11,43 @@ import { User } from '../../model/user';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
-  displayedColumns: string[] = [
-    'id',
-    'name',
-    'role',
-    'branch',
-    'status',
-    'createdat',
-  ];
 
-  Userdata: User[] = [
-    {
-      id: 'AK190004',
-      name: 'ALEX KUMAR',
-      role: 'ADMIN',
-      branch: 'HEAD QUARTERS - KALMUNAI',
-      status: 'THARSHIKA',
-      createdat: '',
-    },
-    {
-      id: 'AK190001',
-      name: 'ALEX KUMAR',
-      role: 'ADMIN',
-      branch: 'HEAD QUARTERS - KALMUNAI',
-      status: 'THARSHIKA',
-      createdat: '',
-    },
-    {
-      id: 'AK190004',
-      name: 'ALEX KUMAR',
-      role: 'ADMIN',
-      branch: 'HEAD QUARTERS - KALMUNAI',
-      status: 'THARSHIKA',
-      createdat: '',
-    },
-    {
-      id: 'AK190004',
-      name: 'ALEX KUMAR',
-      role: 'ADMIN',
-      branch: 'HEAD QUARTERS - KALMUNAI',
-      status: 'THARSHIKA',
-      createdat: '',
-    },
-    {
-      id: 'AK190004',
-      name: 'ALEX KUMAR',
-      role: 'ADMIN',
-      branch: 'HEAD QUARTERS - KALMUNAI',
-      status: 'THARSHIKA',
-      createdat: '',
-    },
-    {
-      id: 'AK190004',
-      name: 'ALEX KUMAR',
-      role: 'ADMIN',
-      branch: 'HEAD QUARTERS - KALMUNAI',
-      status: 'THARSHIKA',
-      createdat: '',
-    },
-    {
-      id: 'AK190004',
-      name: 'ALEX KUMAR',
-      role: 'ADMIN',
-      branch: 'HEAD QUARTERS - KALMUNAI',
-      status: 'THARSHIKA',
-      createdat: '',
-    },
-  ];
+  data : Array<User> = dataset;
+  Users : Array<User> = dataset;
+  @ViewChildren(SortableHeaderDirective)
+  headers: QueryList<SortableHeaderDirective>;
+  config : any;
 
-  dataSource = new MatTableDataSource(this.Userdata);
-  dataSourceWithPageSize = new MatTableDataSource(this.Userdata);
-
-  constructor() {}
-  @ViewChild('exmTbSort') exmTbSort: MatSort;
-  totalLength: any;
-  page: number = 1;
-
-  ngAfterViewInit() {
-    this.exmTbSort.disableClear = true;
-    this.dataSource.sort = this.exmTbSort;
+  constructor() {
+    this.config = {
+      itemsPerPage : 5,
+      currentPage : 1,
+      totalItems : this.Users
+    }
   }
 
   ngOnInit(): void {
-    this.totalLength = this.Userdata.length;
+  }
+  onSort({column, direction}: SortEvent){
+    //reset other headerss
+    this.headers.forEach((header: { sortable: string; direction: string; }) => {
+      if(header.sortable !== column){
+        header.direction ='';
+      }
+    });
+
+    //sorting
+    if(direction === '' || column === ''){
+      this.Users = this.data;
+    } else {
+      this.Users = [...this.data].sort((a,b) => {
+        const res = compare(a[column], b[column]);
+        return direction === 'asc' ? res : -res;
+      })
+    }
+  }
+
+  pageChanged(event: any){
+    this.config.currentPage = event;  
   }
 }
